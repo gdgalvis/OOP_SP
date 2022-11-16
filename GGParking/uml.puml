@@ -1,0 +1,47 @@
+@startuml
+class User {
+name: str
+user: str
+car : Car
+reserve(car,time)
+}
+
+class Parking {
+name: str
+ncompt: int
+nSUV: int
+nVan:int
+ftime: str
+Lcars: List
+addcar(car:Car)
+removecar(car:Car)
+}
+
+class abc.ABC{}
+
+class Car{
+park()
+}
+class Compact{
+id: str
+toll:int
+park()
+}
+class SUV{
+id: str
+toll:int
+park()
+}
+class VAN{
+id: str
+toll:int
+park()
+}
+
+abc.ABC <|-- Car
+Car <|-- Compact
+Car <|-- SUV
+Car <|-- VAN
+Car *-- User
+Parking *-- User
+@enduml
